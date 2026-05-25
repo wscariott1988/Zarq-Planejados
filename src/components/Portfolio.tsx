@@ -6,43 +6,43 @@ const portfolioItems = [
     id: 1,
     type: 'video',
     vimeoUrl: 'https://player.vimeo.com/video/1195343802',
-    imgUrl: '/Portfolio/Portfolio (1).webp',
+    imgUrl: '/Portfolio/Portfolio (2).webp',
     alt: 'Projeto Exclusivo em Vídeo 1',
     colSpan: 'col-span-1 md:col-span-1 row-span-2'
   },
   {
     id: 2,
     type: 'image',
-    imgUrl: '/Portfolio/Portfolio (1).webp',
-    alt: 'Projeto Exclusivo Zarq 1',
+    imgUrl: '/Portfolio/cabeceira.webp',
+    alt: 'Cabeceira Exclusiva Zarq',
     colSpan: 'col-span-1 md:col-span-2 row-span-1'
   },
   {
     id: 3,
     type: 'image',
-    imgUrl: '/Portfolio/Portfolio (2).webp',
-    alt: 'Projeto Exclusivo Zarq 2',
+    imgUrl: '/Portfolio/penteadeira.webp',
+    alt: 'Penteadeira Sob Medida',
     colSpan: 'col-span-1 md:col-span-1 row-span-1'
   },
   {
     id: 4,
     type: 'video',
     vimeoUrl: 'https://player.vimeo.com/video/1195343801',
-    imgUrl: '/Portfolio/Portfolio (2).webp',
+    imgUrl: '/Portfolio/Portfolio (3).webp',
     alt: 'Projeto Exclusivo em Vídeo 2',
     colSpan: 'col-span-1 md:col-span-1 row-span-2'
   },
   {
     id: 5,
     type: 'image',
-    imgUrl: '/Portfolio/Portfolio (3).webp',
+    imgUrl: '/Portfolio/Portfolio (4).webp',
     alt: 'Projeto Exclusivo Zarq 3',
     colSpan: 'col-span-1 md:col-span-1 row-span-1'
   },
   {
     id: 6,
     type: 'image',
-    imgUrl: '/Portfolio/Portfolio (4).webp',
+    imgUrl: '/Portfolio/Portfolio (2).webp',
     alt: 'Projeto Exclusivo Zarq 4',
     colSpan: 'col-span-1 md:col-span-1 row-span-1'
   },
