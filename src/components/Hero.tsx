@@ -22,12 +22,12 @@ export default function Hero() {
 
       <div className="relative z-20 container mx-auto px-6 md:px-12 text-center md:text-left max-w-7xl pt-20">
         <h1 className="font-playfair text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-white font-bold leading-[1.1] mb-6 tracking-tight">
-          O Ambiente dos Seus Sonhos, <br className="hidden md:block" />
-          <span className="text-gold-500">Feito Sob Medida para o Seu Estilo de Vida.</span>
+          Móveis Planejados de Alto Padrão. <br className="hidden md:block" />
+          <span className="text-gold-500">Entregues no Prazo e com Montagem Impecável.</span>
         </h1>
         
         <p className="font-inter text-base sm:text-lg md:text-xl text-gray-300 mb-10 max-w-3xl leading-relaxed font-light">
-          A Zarq Planejados une design sofisticado e execução milimétrica para a sua casa. Com mais de 400 projetos entregues, garantimos pontualidade absoluta e uma montagem livre de dores de cabeça para clientes exigentes.
+          Esqueça os atrasos e a dor de cabeça. Transforme sua casa com projetos exclusivos e viva a experiência de uma montagem limpa e pontual. Há 6 anos, a Zarq Planejados entrega o verdadeiro luxo: o capricho em cada detalhe.
         </p>
 
         <a 
