@@ -6,6 +6,7 @@ import Process from './components/Process';
 import Payment from './components/Payment';
 import Footer from './components/Footer';
 import BioLink from './components/BioLink';
+import FloatingWhatsApp from './components/FloatingWhatsApp';
 
 function App() {
   // Roteamento nativo simples e rápido (Frictionless / High Performance)
@@ -14,7 +15,7 @@ function App() {
   }
 
   return (
-    <main className="min-h-screen bg-zarq-dark">
+    <main className="min-h-screen bg-zarq-dark relative">
       <Hero />
       <TrustBar />
       <Differential />
@@ -22,6 +23,7 @@ function App() {
       <Process />
       <Payment />
       <Footer />
+      <FloatingWhatsApp />
     </main>
   );
 }
