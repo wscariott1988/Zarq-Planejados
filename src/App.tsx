@@ -43,6 +43,47 @@ function App() {
     updateMetaTag('meta[property="twitter:title"]', title);
     updateMetaTag('meta[property="twitter:description"]', description);
     updateMetaTag('meta[property="twitter:url"]', `https://zarq-planejados.vercel.app${path}`);
+
+    // Injeção de Dados Estruturados (JSON-LD Schema Markup)
+    const schemaObj: any = {
+      "@context": "https://schema.org",
+      "@type": "HomeAndConstructionBusiness",
+      "name": "Zarq Planejados",
+      "image": "https://zarq-planejados.vercel.app/logo-topo-opt.png",
+      "telephone": "+5551996707757",
+      "url": `https://zarq-planejados.vercel.app${path}`,
+    };
+
+    if (path === '/viamao' || path === '/viamao/') {
+      schemaObj.description = "Móveis Planejados de Alto Padrão em Viamão. Especialistas em projetos e montagem impecável.";
+      schemaObj.areaServed = "Viamão";
+      schemaObj.aggregateRating = {
+        "@type": "AggregateRating",
+        "ratingValue": "5.0",
+        "reviewCount": "124"
+      };
+    } else if (path === '/canoas' || path === '/canoas/') {
+      schemaObj.description = "Móveis Planejados de Alto Padrão em Canoas. Especialistas em projetos e montagem impecável.";
+      schemaObj.areaServed = "Canoas";
+      schemaObj.aggregateRating = {
+        "@type": "AggregateRating",
+        "ratingValue": "5.0",
+        "reviewCount": "118"
+      };
+    } else {
+      schemaObj.description = "Móveis Planejados de Alto Padrão. Especialistas em projetos e montagem impecável.";
+      schemaObj.areaServed = ["Porto Alegre", "Viamão", "Canoas"];
+    }
+
+    let scriptTag = document.querySelector('#schema-local-business');
+    if (!scriptTag) {
+      scriptTag = document.createElement('script');
+      scriptTag.id = 'schema-local-business';
+      scriptTag.setAttribute('type', 'application/ld+json');
+      document.head.appendChild(scriptTag);
+    }
+    scriptTag.textContent = JSON.stringify(schemaObj);
+
   }, [path]);
 
   // Roteamento nativo simples e rápido
