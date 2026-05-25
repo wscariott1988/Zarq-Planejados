@@ -15,7 +15,7 @@ export default function Hero() {
           <img 
             src="/logo-topo.png" 
             alt="Logo Zarq Planejados" 
-            className="h-28 md:h-16 w-auto object-contain opacity-90 hover:opacity-100 transition-opacity"
+            className="h-24 md:h-16 w-auto object-contain opacity-90 hover:opacity-100 transition-opacity"
           />
         </div>
       </header>
