@@ -1,0 +1,34 @@
+import { ArrowRight } from 'lucide-react';
+
+export default function Hero() {
+  return (
+    <section className="relative h-screen min-h-[600px] flex items-center justify-center bg-zinc-900 overflow-hidden">
+      {/* Background Image & Overlay */}
+      <div 
+        className="absolute inset-0 z-0 bg-[url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=2070&auto=format&fit=crop')] bg-cover bg-center"
+      />
+      <div className="absolute inset-0 z-10 bg-black/70" /> 
+
+      <div className="relative z-20 container mx-auto px-6 md:px-12 text-center md:text-left max-w-7xl pt-20">
+        <h1 className="font-playfair text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-white font-bold leading-[1.1] mb-6 tracking-tight">
+          Móveis Planejados Exclusivos. <br className="hidden md:block" />
+          <span className="text-gold-500">Sem Atrasos e Sem Dor de Cabeça na Montagem.</span>
+        </h1>
+        
+        <p className="font-inter text-base sm:text-lg md:text-xl text-gray-300 mb-10 max-w-3xl leading-relaxed font-light">
+          Unimos a engenharia de projetos sofisticados com uma execução impecável. Transforme sua casa com quem tem 6 anos de experiência e entende que o verdadeiro luxo está no capricho dos detalhes.
+        </p>
+
+        <a 
+          href="https://wa.me/5551996707757" 
+          target="_blank" 
+          rel="noopener noreferrer" 
+          className="group flex items-center justify-center gap-3 w-full md:w-fit bg-gold-500 hover:bg-gold-600 text-zinc-950 font-semibold uppercase tracking-wider py-4 px-8 rounded-sm transition-all duration-300 mx-auto md:mx-0"
+        >
+          Falar com um Especialista
+          <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+        </a>
+      </div>
+    </section>
+  );
+}
