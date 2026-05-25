@@ -9,6 +9,6 @@
     scroll-behavior: smooth;
   }
   body {
-    @apply bg-zinc-950 text-gray-100 font-inter antialiased;
+    @apply bg-zarq-dark text-gray-100 font-inter antialiased;
   }
 }

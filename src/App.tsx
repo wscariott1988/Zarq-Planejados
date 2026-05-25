@@ -8,7 +8,7 @@ import Footer from './components/Footer';
 
 function App() {
   return (
-    <main className="min-h-screen bg-zinc-950">
+    <main className="min-h-screen bg-zarq-dark">
       <Hero />
       <TrustBar />
       <Differential />

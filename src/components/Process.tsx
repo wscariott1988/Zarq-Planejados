@@ -25,7 +25,7 @@ const steps = [
 
 export default function Process() {
   return (
-    <section className="bg-zinc-900 py-24 md:py-32">
+    <section className="bg-zarq py-24 md:py-32">
       <div className="container mx-auto px-6 max-w-7xl">
         <div className="text-center mb-20">
           <span className="text-gold-500 font-inter text-sm md:text-base font-semibold tracking-widest uppercase mb-4 block">
@@ -45,8 +45,8 @@ export default function Process() {
 
           {steps.map((step, index) => (
             <div key={index} className="relative flex flex-col items-center text-center group">
-              <div className="w-24 h-24 rounded-full bg-zinc-950 border border-zinc-800 flex items-center justify-center mb-8 relative z-10 group-hover:border-gold-500/50 transition-colors duration-500 shadow-xl">
-                <span className="absolute -top-3 -right-2 text-5xl font-playfair font-bold text-zinc-800/50 z-0">
+              <div className="w-24 h-24 rounded-full bg-zarq-dark border border-zarq/50 flex items-center justify-center mb-8 relative z-10 group-hover:border-gold-500/50 transition-colors duration-500 shadow-xl">
+                <span className="absolute -top-3 -right-2 text-5xl font-playfair font-bold text-zarq/60 z-0">
                   {index + 1}
                 </span>
                 <step.icon className="w-10 h-10 text-gold-500 relative z-10" strokeWidth={1.5} />

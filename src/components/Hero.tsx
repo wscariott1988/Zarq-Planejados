@@ -2,12 +2,12 @@ import { ArrowRight } from 'lucide-react';
 
 export default function Hero() {
   return (
-    <section className="relative h-screen min-h-[600px] flex items-center justify-center bg-zinc-900 overflow-hidden">
+    <section className="relative h-screen min-h-[600px] flex items-center justify-center bg-zarq overflow-hidden">
       {/* Background Image & Overlay */}
       <div 
-        className="absolute inset-0 z-0 bg-[url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=2070&auto=format&fit=crop')] bg-cover bg-center"
+        className="absolute inset-0 z-0 bg-[url('/hero.webp')] bg-cover bg-center"
       />
-      <div className="absolute inset-0 z-10 bg-black/70" /> 
+      <div className="absolute inset-0 z-10 bg-black/60" /> 
 
       <div className="relative z-20 container mx-auto px-6 md:px-12 text-center md:text-left max-w-7xl pt-20">
         <h1 className="font-playfair text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-white font-bold leading-[1.1] mb-6 tracking-tight">
@@ -23,7 +23,7 @@ export default function Hero() {
           href="https://wa.me/5551996707757" 
           target="_blank" 
           rel="noopener noreferrer" 
-          className="group flex items-center justify-center gap-3 w-full md:w-fit bg-gold-500 hover:bg-gold-600 text-zinc-950 font-semibold uppercase tracking-wider py-4 px-8 rounded-sm transition-all duration-300 mx-auto md:mx-0"
+          className="group flex items-center justify-center gap-3 w-full md:w-fit bg-gold-500 hover:bg-gold-600 text-zarq-dark font-semibold uppercase tracking-wider py-4 px-8 rounded-sm transition-all duration-300 mx-auto md:mx-0"
         >
           Falar com um Especialista
           <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />

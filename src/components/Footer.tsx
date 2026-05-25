@@ -4,7 +4,7 @@ const WHATSAPP_LINK = "https://wa.me/5551996707757";
 
 export default function Footer() {
   return (
-    <footer className="bg-black py-16 md:py-24 border-t border-zinc-900 relative z-20">
+    <footer className="bg-zarq-dark py-16 md:py-24 border-t border-zarq relative z-20">
       <div className="container mx-auto px-6 max-w-7xl flex flex-col items-center text-center">
         
         {/* Logo Placeholder */}
@@ -25,7 +25,7 @@ export default function Footer() {
             href={WHATSAPP_LINK}
             target="_blank"
             rel="noopener noreferrer"
-            className="group flex items-center justify-center gap-3 w-full bg-gold-500 hover:bg-gold-600 text-zinc-950 font-bold uppercase tracking-wider py-5 px-8 rounded-sm transition-all duration-300"
+            className="group flex items-center justify-center gap-3 w-full bg-gold-500 hover:bg-gold-600 text-zarq-dark font-bold uppercase tracking-wider py-5 px-8 rounded-sm transition-all duration-300"
           >
             Solicitar Meu Projeto Exclusivo
             <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
@@ -49,8 +49,8 @@ export default function Footer() {
         </div>
 
         {/* Copyright / Legal */}
-        <div className="w-full pt-8 border-t border-zinc-900 flex justify-center items-center">
-          <p className="font-inter text-zinc-600 text-xs text-center">
+        <div className="w-full pt-8 border-t border-zarq flex justify-center items-center">
+          <p className="font-inter text-zinc-500 text-xs text-center">
             &copy; {new Date().getFullYear()} Zarq Móveis Planejados. Todos os direitos reservados.
           </p>
         </div>

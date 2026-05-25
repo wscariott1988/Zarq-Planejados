@@ -7,9 +7,13 @@ export default {
   theme: {
     extend: {
       colors: {
+        zarq: {
+          DEFAULT: '#003E39', // Verde da marca
+          dark: '#002522', // Verde mais escuro para contraste
+        },
         gold: {
-          500: '#C5A059',
-          600: '#A88746',
+          500: '#CE8D4D', // Dourado/Cobre da marca
+          600: '#B5773B', // Dourado/Cobre hover
         },
         zinc: {
           950: '#0A0A0A',
