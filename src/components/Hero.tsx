@@ -9,6 +9,15 @@ export default function Hero() {
       />
       <div className="absolute inset-0 z-10 bg-black/60" /> 
 
+      {/* Header Minimalista Fixo */}
+      <header className="absolute top-0 left-0 w-full z-30 pt-8 pb-4">
+        <div className="container mx-auto px-6 md:px-12 text-center md:text-left max-w-7xl">
+          <span className="font-playfair text-2xl md:text-3xl text-gold-500 font-bold uppercase tracking-widest">
+            Zarq Planejados
+          </span>
+        </div>
+      </header>
+
       <div className="relative z-20 container mx-auto px-6 md:px-12 text-center md:text-left max-w-7xl pt-20">
         <h1 className="font-playfair text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-white font-bold leading-[1.1] mb-6 tracking-tight">
           Móveis Planejados Exclusivos. <br className="hidden md:block" />
@@ -16,7 +25,7 @@ export default function Hero() {
         </h1>
         
         <p className="font-inter text-base sm:text-lg md:text-xl text-gray-300 mb-10 max-w-3xl leading-relaxed font-light">
-          Unimos a engenharia de projetos sofisticados com uma execução impecável. Transforme sua casa com quem tem 6 anos de experiência e entende que o verdadeiro luxo está no capricho dos detalhes.
+          A Zarq Planejados une a engenharia de projetos sofisticados com uma execução impecável. Transforme sua casa com quem tem 6 anos de experiência e entende que o verdadeiro luxo está no capricho dos detalhes.
         </p>
 
         <a 
