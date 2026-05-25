@@ -3,15 +3,14 @@ export default function BioLink() {
     <div className="min-h-screen bg-zarq flex flex-col items-center justify-center p-6 text-center">
       <div className="w-full max-w-md mx-auto flex flex-col items-center">
         
-        {/* Avatar / Logo (Usando a inicial ou um placeholder elegante até ter a logo final) */}
-        <div className="w-24 h-24 rounded-full bg-zarq-dark border-2 border-gold-500 flex items-center justify-center mb-6 shadow-xl shadow-black/20">
-          <span className="font-playfair text-4xl text-gold-500 font-bold tracking-wider">Z</span>
-        </div>
+        {/* Logo Oficial Centralizada */}
+        <img 
+          src="/logo%20bio%20page.webp" 
+          alt="Logo Zarq Planejados" 
+          className="h-28 md:h-32 w-auto mx-auto mb-6 object-contain"
+        />
 
-        {/* Título e Descrição */}
-        <h1 className="font-playfair text-3xl text-white font-bold tracking-wider uppercase mb-2">
-          Zarq Planejados
-        </h1>
+        {/* Descrição */}
         <p className="font-inter text-gray-300 text-sm md:text-base font-light mb-12 max-w-[280px]">
           Sofisticação, exclusividade e pontualidade.
         </p>

@@ -11,10 +11,12 @@ export default function Hero() {
 
       {/* Header Minimalista Fixo */}
       <header className="absolute top-0 left-0 w-full z-30 pt-8 pb-4">
-        <div className="container mx-auto px-6 md:px-12 text-center md:text-left max-w-7xl">
-          <span className="font-playfair text-2xl md:text-3xl text-gold-500 font-bold uppercase tracking-widest">
-            Zarq Planejados
-          </span>
+        <div className="container mx-auto px-6 md:px-12 text-left max-w-7xl">
+          <img 
+            src="/logo%20topo.png" 
+            alt="Logo Zarq Planejados" 
+            className="h-10 md:h-12 w-auto object-contain opacity-90 hover:opacity-100 transition-opacity"
+          />
         </div>
       </header>
 
