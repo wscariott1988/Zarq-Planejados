@@ -22,12 +22,12 @@ export default function Footer() {
         {/* Final CTA */}
         <div className="mb-16 w-full max-w-md">
           <a 
-            href={WHATSAPP_LINK}
+            href="https://wa.me/5551996707757?text=Ol%C3%A1%2C%20gostaria%20de%20solicitar%20um%20or%C3%A7amento%20para%20os%20m%C3%B3veis%20da%20minha%20casa.%20Como%20podemos%20iniciar%3F"
             target="_blank"
             rel="noopener noreferrer"
             className="group flex items-center justify-center gap-3 w-full bg-gold-500 hover:bg-gold-600 text-zarq-dark font-bold uppercase tracking-wider py-5 px-8 rounded-sm transition-all duration-300"
           >
-            Solicitar Meu Projeto Exclusivo
+            Solicitar Meu Orçamento Exclusivo
             <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
           </a>
         </div>

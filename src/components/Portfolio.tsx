@@ -97,6 +97,17 @@ export default function Portfolio() {
               </div>
             ))}
           </div>
+
+          <div className="mt-16 text-center">
+            <a 
+              href="https://wa.me/5551996707757?text=Ol%C3%A1%2C%20gostei%20dos%20projetos%20que%20vi%20no%20site.%20Gostaria%20de%20entender%20como%20funciona%20para%20fazermos%20um%20or%C3%A7amento." 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              className="inline-flex items-center justify-center gap-3 w-full sm:w-auto bg-transparent border-2 border-gold-500 hover:bg-gold-500 hover:text-zarq-dark text-gold-500 font-bold uppercase tracking-wider py-4 px-8 rounded-sm transition-all duration-300"
+            >
+              Quero um Projeto Com Esse Padrão
+            </a>
+          </div>
         </div>
       </section>
 
