@@ -13,7 +13,7 @@ export default function Hero() {
       <header className="absolute top-0 left-0 w-full z-30 pt-8 pb-4">
         <div className="container mx-auto px-6 md:px-12 text-left max-w-7xl">
           <img 
-            src="/logo%20topo.png" 
+            src="/logo-topo.png" 
             alt="Logo Zarq Planejados" 
             className="h-10 md:h-12 w-auto object-contain opacity-90 hover:opacity-100 transition-opacity"
           />
