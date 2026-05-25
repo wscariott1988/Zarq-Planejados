@@ -13,7 +13,7 @@ export default function BioLink() {
           Zarq Planejados
         </h1>
         <p className="font-inter text-gray-300 text-sm md:text-base font-light mb-12 max-w-[280px]">
-          Engenharia de projetos e montagem impecável.
+          Sofisticação, exclusividade e pontualidade.
         </p>
 
         {/* Botões (Links) */}
@@ -38,7 +38,7 @@ export default function BioLink() {
             href="/"
             className="flex items-center justify-center w-full bg-transparent border-2 border-gold-500 hover:bg-gold-500 hover:text-zarq-dark text-white font-bold uppercase tracking-wider py-4 px-6 rounded-xl transition-all duration-300"
           >
-            Ver Projetos Exclusivos
+            Visitar o Nosso Site
           </a>
 
         </div>
