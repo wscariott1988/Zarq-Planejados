@@ -5,7 +5,7 @@ export default function Hero() {
     <section className="relative h-screen min-h-[600px] flex items-center justify-center bg-zarq overflow-hidden">
       {/* Background Image & Overlay */}
       <div 
-        className="absolute inset-0 z-0 bg-[url('/hero.webp')] bg-cover bg-center"
+        className="absolute inset-0 z-0 bg-[url('/Portfolio/Hero.webp')] bg-cover bg-center"
       />
       <div className="absolute inset-0 z-10 bg-black/60" /> 
 

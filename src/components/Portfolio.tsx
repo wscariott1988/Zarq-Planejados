@@ -4,14 +4,14 @@ const portfolioItems = [
   {
     id: 1,
     type: 'image',
-    imgUrl: '/portfolio/1.webp',
+    imgUrl: '/Portfolio/Portfolio (1).webp',
     alt: 'Projeto Exclusivo Zarq 1',
     colSpan: 'col-span-1 md:col-span-2 row-span-2'
   },
   {
     id: 2,
     type: 'video',
-    imgUrl: '/portfolio/2.webp',
+    imgUrl: '/Portfolio/Portfolio (2).webp',
     title: 'Depoimento Cliente',
     alt: 'Vídeo Depoimento Cliente',
     colSpan: 'col-span-1 md:col-span-1 row-span-1'
@@ -19,21 +19,21 @@ const portfolioItems = [
   {
     id: 3,
     type: 'image',
-    imgUrl: '/portfolio/3.webp',
+    imgUrl: '/Portfolio/Portfolio (3).webp',
     alt: 'Projeto Exclusivo Zarq 3',
     colSpan: 'col-span-1 md:col-span-1 row-span-1'
   },
   {
     id: 4,
     type: 'image',
-    imgUrl: '/portfolio/4.webp',
+    imgUrl: '/Portfolio/Portfolio (4).webp',
     alt: 'Projeto Exclusivo Zarq 4',
     colSpan: 'col-span-1 md:col-span-1 row-span-1'
   },
   {
     id: 5,
     type: 'video',
-    imgUrl: '/portfolio/5.webp',
+    imgUrl: '/Portfolio/Portfolio (1).webp', // Usando uma imagem existente como fallback
     title: 'Depoimento Cliente',
     alt: 'Vídeo Depoimento Cliente',
     colSpan: 'col-span-1 md:col-span-1 row-span-1'
@@ -41,7 +41,7 @@ const portfolioItems = [
   {
     id: 6,
     type: 'image',
-    imgUrl: '/portfolio/6.webp',
+    imgUrl: '/Portfolio/Portfolio (2).webp', // Usando uma imagem existente como fallback
     alt: 'Projeto Exclusivo Zarq 6',
     colSpan: 'col-span-1 md:col-span-1 row-span-1'
   },
