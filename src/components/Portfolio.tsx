@@ -1,48 +1,44 @@
-import { Play } from 'lucide-react';
-
 const portfolioItems = [
   {
     id: 1,
-    type: 'image',
-    imgUrl: '/Portfolio/Portfolio (1).webp',
-    alt: 'Projeto Exclusivo Zarq 1',
-    colSpan: 'col-span-1 md:col-span-2 row-span-2'
+    type: 'video',
+    vimeoUrl: 'https://player.vimeo.com/video/1195343802?autoplay=1&loop=1&muted=1&title=0&byline=0&portrait=0&background=1',
+    alt: 'Projeto Exclusivo em Vídeo 1',
+    colSpan: 'col-span-1 md:col-span-1 row-span-2'
   },
   {
     id: 2,
-    type: 'video',
-    imgUrl: '/Portfolio/Portfolio (2).webp',
-    title: 'Depoimento Cliente',
-    alt: 'Vídeo Depoimento Cliente',
-    colSpan: 'col-span-1 md:col-span-1 row-span-1'
+    type: 'image',
+    imgUrl: '/Portfolio/Portfolio (1).webp',
+    alt: 'Projeto Exclusivo Zarq 1',
+    colSpan: 'col-span-1 md:col-span-2 row-span-1'
   },
   {
     id: 3,
+    type: 'image',
+    imgUrl: '/Portfolio/Portfolio (2).webp',
+    alt: 'Projeto Exclusivo Zarq 2',
+    colSpan: 'col-span-1 md:col-span-1 row-span-1'
+  },
+  {
+    id: 4,
+    type: 'video',
+    vimeoUrl: 'https://player.vimeo.com/video/1195343801?autoplay=1&loop=1&muted=1&title=0&byline=0&portrait=0&background=1',
+    alt: 'Projeto Exclusivo em Vídeo 2',
+    colSpan: 'col-span-1 md:col-span-1 row-span-2'
+  },
+  {
+    id: 5,
     type: 'image',
     imgUrl: '/Portfolio/Portfolio (3).webp',
     alt: 'Projeto Exclusivo Zarq 3',
     colSpan: 'col-span-1 md:col-span-1 row-span-1'
   },
   {
-    id: 4,
+    id: 6,
     type: 'image',
     imgUrl: '/Portfolio/Portfolio (4).webp',
     alt: 'Projeto Exclusivo Zarq 4',
-    colSpan: 'col-span-1 md:col-span-1 row-span-1'
-  },
-  {
-    id: 5,
-    type: 'video',
-    imgUrl: '/Portfolio/Portfolio (1).webp', // Usando uma imagem existente como fallback
-    title: 'Depoimento Cliente',
-    alt: 'Vídeo Depoimento Cliente',
-    colSpan: 'col-span-1 md:col-span-1 row-span-1'
-  },
-  {
-    id: 6,
-    type: 'image',
-    imgUrl: '/Portfolio/Portfolio (2).webp', // Usando uma imagem existente como fallback
-    alt: 'Projeto Exclusivo Zarq 6',
     colSpan: 'col-span-1 md:col-span-1 row-span-1'
   },
 ];
@@ -67,31 +63,29 @@ export default function Portfolio() {
         </div>
 
         {/* Grid estilo Masonry/Bento */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 auto-rows-[250px] md:auto-rows-[300px]">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 auto-rows-[300px]">
           {portfolioItems.map((item) => (
             <div 
               key={item.id} 
               className={`relative group overflow-hidden bg-zarq rounded-xl cursor-pointer ${item.colSpan}`}
             >
-              <img 
-                src={item.imgUrl} 
-                alt={item.alt}
-                className="w-full h-full object-cover rounded-xl transition-transform duration-700 group-hover:scale-105 opacity-80 group-hover:opacity-100"
-              />
-              
               {item.type === 'video' ? (
-                <>
-                  <div className="absolute inset-0 bg-black/40 group-hover:bg-black/50 transition-colors duration-300 rounded-xl" />
-                  <div className="absolute inset-0 flex flex-col items-center justify-center">
-                    <div className="w-16 h-16 rounded-full bg-gold-500/90 flex items-center justify-center mb-3 shadow-lg shadow-gold-500/20 group-hover:scale-110 transition-transform duration-300">
-                      <Play className="w-6 h-6 text-zarq-dark ml-1" fill="currentColor" />
-                    </div>
-                    <span className="text-white font-inter font-medium tracking-wide text-sm bg-black/60 px-4 py-1.5 rounded-full backdrop-blur-sm">
-                      {item.title}
-                    </span>
-                  </div>
-                </>
+                <iframe 
+                  src={item.vimeoUrl} 
+                  className="absolute inset-0 w-full h-full object-cover scale-[1.3] md:scale-[1.1] pointer-events-none" 
+                  frameBorder="0" 
+                  allow="autoplay; fullscreen; picture-in-picture" 
+                  allowFullScreen
+                ></iframe>
               ) : (
+                <img 
+                  src={item.imgUrl} 
+                  alt={item.alt}
+                  className="w-full h-full object-cover rounded-xl transition-transform duration-700 group-hover:scale-105 opacity-80 group-hover:opacity-100"
+                />
+              )}
+              
+              {item.type === 'image' && (
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6 rounded-xl">
                   <span className="text-white font-inter font-medium tracking-wide">
                     {item.alt}

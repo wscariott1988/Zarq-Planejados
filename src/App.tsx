@@ -5,8 +5,14 @@ import Portfolio from './components/Portfolio';
 import Process from './components/Process';
 import Payment from './components/Payment';
 import Footer from './components/Footer';
+import BioLink from './components/BioLink';
 
 function App() {
+  // Roteamento nativo simples e rápido (Frictionless / High Performance)
+  if (window.location.pathname === '/links' || window.location.pathname === '/bio') {
+    return <BioLink />;
+  }
+
   return (
     <main className="min-h-screen bg-zarq-dark">
       <Hero />
