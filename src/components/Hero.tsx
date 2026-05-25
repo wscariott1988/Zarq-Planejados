@@ -1,6 +1,14 @@
 import { ArrowRight } from 'lucide-react';
 
 export default function Hero() {
+  const path = window.location.pathname;
+  let city = "";
+  if (path === '/viamao' || path === '/viamao/') city = " em Viamão";
+  if (path === '/canoas' || path === '/canoas/') city = " em Canoas";
+
+  const headlinePrefix = `Móveis Planejados de Alto Padrão${city}.`;
+  const subheadline = `Esqueça os atrasos e a dor de cabeça. Transforme sua casa${city} com projetos exclusivos e viva a experiência de uma montagem limpa e pontual. Há 6 anos, a Zarq Planejados entrega o verdadeiro luxo: o capricho em cada detalhe.`;
+
   return (
     <section className="relative h-screen min-h-[600px] flex items-center justify-center bg-zarq overflow-hidden">
       {/* Background Image & Overlay */}
@@ -22,12 +30,12 @@ export default function Hero() {
 
       <div className="relative z-20 container mx-auto px-6 md:px-12 text-center md:text-left max-w-7xl pt-20">
         <h1 className="font-playfair text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-white font-bold leading-[1.1] mb-6 tracking-tight">
-          Móveis Planejados de Alto Padrão. <br className="hidden md:block" />
+          {headlinePrefix} <br className="hidden md:block" />
           <span className="text-gold-500">Entregues no Prazo e com Montagem Impecável.</span>
         </h1>
         
         <p className="font-inter text-base sm:text-lg md:text-xl text-gray-300 mb-10 max-w-3xl leading-relaxed font-light">
-          Esqueça os atrasos e a dor de cabeça. Transforme sua casa com projetos exclusivos e viva a experiência de uma montagem limpa e pontual. Há 6 anos, a Zarq Planejados entrega o verdadeiro luxo: o capricho em cada detalhe.
+          {subheadline}
         </p>
 
         <a 
