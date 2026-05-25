@@ -7,6 +7,8 @@ export default function BioLink() {
         <img 
           src="/logo-bio.png" 
           alt="Logo Zarq Planejados" 
+          width="400"
+          height="400"
           className="h-[22rem] md:h-96 w-auto mx-auto mb-0 object-contain"
         />
 

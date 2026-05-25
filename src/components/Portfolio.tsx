@@ -13,14 +13,14 @@ const portfolioItems = [
   {
     id: 2,
     type: 'image',
-    imgUrl: '/Portfolio/cabeceira.webp',
+    imgUrl: '/Portfolio/cabeceira-opt.webp',
     alt: 'Cabeceira Exclusiva Zarq',
     colSpan: 'col-span-1 md:col-span-2 row-span-1'
   },
   {
     id: 3,
     type: 'image',
-    imgUrl: '/Portfolio/penteadeira.webp',
+    imgUrl: '/Portfolio/penteadeira-opt.webp',
     alt: 'Penteadeira Sob Medida',
     colSpan: 'col-span-1 md:col-span-1 row-span-1'
   },
@@ -81,6 +81,7 @@ export default function Portfolio() {
                 <img 
                   src={item.imgUrl} 
                   alt={item.alt}
+                  loading="lazy"
                   className="w-full h-full object-cover rounded-xl transition-transform duration-700 group-hover:scale-105 opacity-80 group-hover:opacity-100"
                 />
                 

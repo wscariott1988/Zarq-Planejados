@@ -21,8 +21,10 @@ export default function Hero() {
       <header className="absolute top-0 left-0 w-full z-30 pt-8 pb-4">
         <div className="container mx-auto px-6 md:px-12 flex justify-center md:justify-start max-w-7xl">
           <img 
-            src="/logo-topo.png" 
+            src="/logo-topo-opt.png" 
             alt="Logo Zarq Planejados" 
+            width="250"
+            height="60"
             className="h-24 md:h-16 w-auto object-contain opacity-90 hover:opacity-100 transition-opacity"
           />
         </div>
