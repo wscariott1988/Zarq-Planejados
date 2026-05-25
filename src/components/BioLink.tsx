@@ -5,7 +5,7 @@ export default function BioLink() {
         
         {/* Logo Oficial Centralizada */}
         <img 
-          src="/logo-bio.webp" 
+          src="/logo-bio.png" 
           alt="Logo Zarq Planejados" 
           className="h-44 md:h-48 w-auto mx-auto mb-6 object-contain"
         />
