@@ -1,3 +1,5 @@
+import { openQuizModal } from './QuizModal';
+
 export default function BioLink() {
   return (
     <div className="min-h-screen bg-zarq flex flex-col items-center justify-center p-6 text-center">
@@ -22,9 +24,8 @@ export default function BioLink() {
           
           {/* Botão 1 - Destaque (WhatsApp) */}
           <a 
-            href="https://wa.me/5551996707757?text=Ol%C3%A1%2C%20encontrei%20voc%C3%AAs%20no%20instagram%20e%20gostaria%20de%20um%20or%C3%A7amento."
-            target="_blank"
-            rel="noopener noreferrer"
+            href="#"
+            onClick={openQuizModal}
             className="flex items-center justify-center gap-3 w-full bg-gold-500 hover:bg-gold-600 text-zarq-dark font-bold uppercase tracking-wider py-4 px-6 rounded-xl transition-all duration-300 shadow-lg shadow-gold-500/20"
           >
             {/* Ícone customizado do WhatsApp */}

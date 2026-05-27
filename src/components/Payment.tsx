@@ -1,4 +1,5 @@
 import { CreditCard, ArrowRight } from 'lucide-react';
+import { openQuizModal } from './QuizModal';
 
 export default function Payment() {
   return (
@@ -33,9 +34,8 @@ export default function Payment() {
             </div>
 
             <a 
-              href="https://wa.me/5551996707757" 
-              target="_blank" 
-              rel="noopener noreferrer" 
+              href="#"
+              onClick={openQuizModal}
               className="group flex items-center justify-center gap-3 w-full sm:w-auto bg-transparent border border-gold-500 text-gold-500 hover:bg-gold-500 hover:text-zarq-dark font-semibold uppercase tracking-wider py-4 px-8 rounded-sm transition-all duration-300"
             >
               Consultar Condições

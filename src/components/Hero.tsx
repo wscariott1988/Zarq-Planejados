@@ -1,4 +1,5 @@
 import { ArrowRight } from 'lucide-react';
+import { openQuizModal } from './QuizModal';
 
 export default function Hero() {
   const path = window.location.pathname;
@@ -41,9 +42,8 @@ export default function Hero() {
         </p>
 
         <a 
-          href="https://wa.me/5551996707757?text=Ol%C3%A1%2C%20vim%20pelo%20site%20da%20Zarq%20e%20gostaria%20de%20falar%20com%20um%20especialista%20sobre%20um%20projeto." 
-          target="_blank" 
-          rel="noopener noreferrer" 
+          href="#"
+          onClick={openQuizModal}
           className="group flex items-center justify-center gap-3 w-full md:w-fit bg-gold-500 hover:bg-gold-600 text-zarq-dark font-semibold uppercase tracking-wider py-4 px-8 rounded-sm transition-all duration-300 mx-auto md:mx-0"
         >
           Falar com um Especialista

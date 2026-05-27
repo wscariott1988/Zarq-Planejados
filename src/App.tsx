@@ -7,6 +7,7 @@ import Payment from './components/Payment';
 import Footer from './components/Footer';
 import BioLink from './components/BioLink';
 import FloatingWhatsApp from './components/FloatingWhatsApp';
+import QuizModal from './components/QuizModal';
 import { useEffect } from 'react';
 
 function App() {
@@ -86,13 +87,18 @@ function App() {
 
   }, [path]);
 
-  // Roteamento nativo simples e rápido
   if (path === '/links' || path === '/bio') {
-    return <BioLink />;
+    return (
+      <>
+        <BioLink />
+        <QuizModal />
+      </>
+    );
   }
 
   return (
-    <main className="min-h-screen bg-zarq-dark relative">
+    <>
+      <main className="min-h-screen bg-zarq-dark relative">
       <Hero />
       <TrustBar />
       <Differential />
@@ -101,7 +107,9 @@ function App() {
       <Payment />
       <Footer />
       <FloatingWhatsApp />
+      <QuizModal />
     </main>
+    </>
   );
 }
 
