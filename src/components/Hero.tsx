@@ -6,8 +6,13 @@ export default function Hero() {
   let city = "";
   if (path === '/viamao' || path === '/viamao/') city = " em Viamão";
   if (path === '/canoas' || path === '/canoas/') city = " em Canoas";
+  if (path === '/porto-alegre' || path === '/porto-alegre/' || path === '/portoalegre' || path === '/portoalegre/') city = " em Porto Alegre";
 
-  const headlinePrefix = `Móveis Planejados de Alto Padrão${city}.`;
+  let headlinePrefix = `Móveis Planejados de Alto Padrão${city}.`;
+  if (path === '/porto-alegre' || path === '/porto-alegre/' || path === '/portoalegre' || path === '/portoalegre/') {
+    headlinePrefix = "Projetos Sob Medida e Móveis Planejados de Alto Padrão em Porto Alegre.";
+  }
+
   const subheadline = `Esqueça os atrasos e a dor de cabeça. Transforme sua casa${city} com projetos exclusivos e viva a experiência de uma montagem limpa e pontual. Há 6 anos, a Zarq Planejados entrega o verdadeiro luxo: o capricho em cada detalhe.`;
 
   return (

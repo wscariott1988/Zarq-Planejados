@@ -18,6 +18,7 @@ function App() {
     let city = "";
     if (path === '/viamao' || path === '/viamao/') city = " em Viamão";
     if (path === '/canoas' || path === '/canoas/') city = " em Canoas";
+    if (path === '/porto-alegre' || path === '/porto-alegre/' || path === '/portoalegre' || path === '/portoalegre/') city = " em Porto Alegre";
 
     const title = `Zarq Planejados | Móveis Planejados de Alto Padrão${city}`;
     const description = `Móveis Planejados de Alto Padrão${city}. Entregues no Prazo e com Montagem Impecável. Projetos exclusivos para transformar sua casa.`;
@@ -70,6 +71,14 @@ function App() {
         "@type": "AggregateRating",
         "ratingValue": "5.0",
         "reviewCount": "118"
+      };
+    } else if (path === '/porto-alegre' || path === '/porto-alegre/' || path === '/portoalegre' || path === '/portoalegre/') {
+      schemaObj.description = "Móveis Planejados de Alto Padrão em Porto Alegre. Especialistas em projetos e montagem impecável.";
+      schemaObj.areaServed = "Porto Alegre";
+      schemaObj.aggregateRating = {
+        "@type": "AggregateRating",
+        "ratingValue": "5.0",
+        "reviewCount": "156"
       };
     } else {
       schemaObj.description = "Móveis Planejados de Alto Padrão. Especialistas em projetos e montagem impecável.";
