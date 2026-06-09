@@ -9,7 +9,7 @@ const isPortoAlegre = () => {
 const WHATSAPP_LINK = "#";
 
 export default function Footer() {
-  const whatsappMessage = encodeURIComponent("Olá, te encontrei no Google e gostaria de um orçamento");
+  const whatsappMessage = encodeURIComponent("Olá, vim pelo site da Zarq e gostaria de falar com um especialista sobre um projeto.");
   const whatsappUrl = `https://wa.me/5551996707757?text=${whatsappMessage}`;
 
   return (

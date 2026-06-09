@@ -1,7 +1,14 @@
 import { CreditCard, ArrowRight } from 'lucide-react';
 import { openQuizModal } from './QuizModal';
 
+const isPortoAlegre = () => {
+  const path = window.location.pathname;
+  return path === '/porto-alegre' || path === '/porto-alegre/' || path === '/portoalegre' || path === '/portoalegre/';
+};
+
 export default function Payment() {
+  const whatsappMessage = encodeURIComponent("Olá, vim pelo site da Zarq e gostaria de falar com um especialista sobre um projeto.");
+  const whatsappUrl = `https://wa.me/5551996707757?text=${whatsappMessage}`;
   return (
     <section className="bg-zarq py-20 md:py-24">
       <div className="container mx-auto px-6 max-w-7xl">
@@ -33,14 +40,26 @@ export default function Payment() {
               </div>
             </div>
 
-            <a 
-              href="#"
-              onClick={openQuizModal}
-              className="group flex items-center justify-center gap-3 w-full sm:w-auto bg-transparent border border-gold-500 text-gold-500 hover:bg-gold-500 hover:text-zarq-dark font-semibold uppercase tracking-wider py-4 px-8 rounded-sm transition-all duration-300"
-            >
-              Consultar Condições
-              <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-            </a>
+            {isPortoAlegre() ? (
+              <a 
+                href={whatsappUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group flex items-center justify-center gap-3 w-full sm:w-auto bg-transparent border border-gold-500 text-gold-500 hover:bg-gold-500 hover:text-zarq-dark font-semibold uppercase tracking-wider py-4 px-8 rounded-sm transition-all duration-300"
+              >
+                Consultar Condições
+                <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+              </a>
+            ) : (
+              <a 
+                href="#"
+                onClick={openQuizModal}
+                className="group flex items-center justify-center gap-3 w-full sm:w-auto bg-transparent border border-gold-500 text-gold-500 hover:bg-gold-500 hover:text-zarq-dark font-semibold uppercase tracking-wider py-4 px-8 rounded-sm transition-all duration-300"
+              >
+                Consultar Condições
+                <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+              </a>
+            )}
           </div>
 
         </div>

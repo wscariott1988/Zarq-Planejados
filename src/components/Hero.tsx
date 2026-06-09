@@ -20,7 +20,7 @@ export default function Hero() {
 
   const subheadline = `Esqueça os atrasos e a dor de cabeça. Transforme sua casa${city} com projetos exclusivos e viva a experiência de uma montagem limpa e pontual. Há 6 anos, a Zarq Planejados entrega o verdadeiro luxo: o capricho em cada detalhe.`;
 
-  const whatsappMessage = encodeURIComponent("Olá, te encontrei no Google e gostaria de um orçamento");
+  const whatsappMessage = encodeURIComponent("Olá, vim pelo site da Zarq e gostaria de falar com um especialista sobre um projeto.");
   const whatsappUrl = `https://wa.me/5551996707757?text=${whatsappMessage}`;
 
   return (

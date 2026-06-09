@@ -2,6 +2,14 @@ import { Play, X } from 'lucide-react';
 import { useState } from 'react';
 import { openQuizModal } from './QuizModal';
 
+const isPortoAlegre = () => {
+  const path = window.location.pathname;
+  return path === '/porto-alegre' || path === '/porto-alegre/' || path === '/portoalegre' || path === '/portoalegre/';
+};
+
+const whatsappMessage = encodeURIComponent("Olá, vim pelo site da Zarq e gostaria de falar com um especialista sobre um projeto.");
+const whatsappUrl = `https://wa.me/5551996707757?text=${whatsappMessage}`;
+
 const portfolioItems = [
   {
     id: 1,
@@ -58,9 +66,6 @@ export default function Portfolio() {
         <div className="container mx-auto px-6 max-w-7xl">
           <div className="mb-16 text-center md:text-left flex flex-col md:flex-row md:items-end justify-between gap-8">
             <div className="max-w-2xl">
-              <span className="text-gold-500 font-inter text-sm md:text-base font-semibold tracking-widest uppercase mb-4 block">
-                A Vitrine
-              </span>
               <h2 className="font-playfair text-3xl sm:text-4xl md:text-5xl text-white font-bold leading-tight">
                 Projetos Reais para <br className="hidden md:block"/>
                 <span className="text-gray-300">Clientes Exigentes</span>
@@ -101,13 +106,24 @@ export default function Portfolio() {
           </div>
 
           <div className="mt-16 text-center">
-            <a 
-              href="#"
-              onClick={openQuizModal}
-              className="inline-flex items-center justify-center gap-3 w-full sm:w-auto bg-transparent border-2 border-gold-500 hover:bg-gold-500 hover:text-zarq-dark text-gold-500 font-bold uppercase tracking-wider py-4 px-8 rounded-sm transition-all duration-300"
-            >
-              Quero um Projeto Com Esse Padrão
-            </a>
+            {isPortoAlegre() ? (
+              <a 
+                href={whatsappUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center justify-center gap-3 w-full sm:w-auto bg-transparent border-2 border-gold-500 hover:bg-gold-500 hover:text-zarq-dark text-gold-500 font-bold uppercase tracking-wider py-4 px-8 rounded-sm transition-all duration-300"
+              >
+                Quero um Projeto Com Esse Padrão
+              </a>
+            ) : (
+              <a 
+                href="#"
+                onClick={openQuizModal}
+                className="inline-flex items-center justify-center gap-3 w-full sm:w-auto bg-transparent border-2 border-gold-500 hover:bg-gold-500 hover:text-zarq-dark text-gold-500 font-bold uppercase tracking-wider py-4 px-8 rounded-sm transition-all duration-300"
+              >
+                Quero um Projeto Com Esse Padrão
+              </a>
+            )}
           </div>
         </div>
       </section>
