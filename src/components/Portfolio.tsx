@@ -54,7 +54,7 @@ export default function Portfolio() {
 
   return (
     <>
-      <section className="bg-zarq-dark py-24 md:py-32 border-t border-zarq">
+      <section className="bg-zarq py-24 md:py-32">
         <div className="container mx-auto px-6 max-w-7xl">
           <div className="mb-16 text-center md:text-left flex flex-col md:flex-row md:items-end justify-between gap-8">
             <div className="max-w-2xl">

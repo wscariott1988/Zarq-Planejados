@@ -3,7 +3,7 @@ import { openQuizModal } from './QuizModal';
 
 export default function Payment() {
   return (
-    <section className="bg-zarq-dark py-20 md:py-24 border-t border-zarq">
+    <section className="bg-zarq py-20 md:py-24">
       <div className="container mx-auto px-6 max-w-7xl">
         <div className="bg-zarq rounded-sm border border-zarq/50 p-8 md:p-16 flex flex-col md:flex-row items-center justify-between gap-12">
           

@@ -25,7 +25,7 @@ const steps = [
 
 export default function Process() {
   return (
-    <section className="bg-zarq py-24 md:py-32">
+    <section className="bg-zarq-dark py-24 md:py-32">
       <div className="container mx-auto px-6 max-w-7xl">
         <div className="text-center mb-20">
           <span className="text-gold-500 font-inter text-sm md:text-base font-semibold tracking-widest uppercase mb-4 block">
