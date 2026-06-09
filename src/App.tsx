@@ -1,6 +1,7 @@
 import Hero from './components/Hero';
 import TrustBar from './components/TrustBar';
 import Differential from './components/Differential';
+import Testimonials from './components/Testimonials';
 import Portfolio from './components/Portfolio';
 import Process from './components/Process';
 import Payment from './components/Payment';
@@ -113,6 +114,7 @@ function App() {
       <Hero />
       <TrustBar />
       <Differential />
+      <Testimonials />
       <Portfolio />
       <Process />
       <Payment />
