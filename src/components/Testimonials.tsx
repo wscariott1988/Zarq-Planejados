@@ -172,7 +172,7 @@ export default function Testimonials() {
             {testimonials.map((item, index) => (
               <div
                 key={index}
-                className="min-w-[calc((100%-12px)/3)] snap-start flex-shrink-0"
+                className="min-w-[calc(33.333%-16px)] snap-start flex-shrink-0"
               >
                 <TestimonialCard name={item.name} text={item.text} />
               </div>
