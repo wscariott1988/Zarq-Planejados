@@ -1,5 +1,6 @@
 import { CreditCard, ArrowRight } from 'lucide-react';
 import { openQuizModal } from './QuizModal';
+import { trackWhatsAppConversion } from '../utils/conversion';
 
 const isPortoAlegre = () => {
   const path = window.location.pathname;
@@ -45,6 +46,7 @@ export default function Payment() {
                 href={whatsappUrl}
                 target="_blank"
                 rel="noopener noreferrer"
+                onClick={trackWhatsAppConversion}
                 className="group flex items-center justify-center gap-3 w-full sm:w-auto bg-transparent border border-gold-500 text-gold-500 hover:bg-gold-500 hover:text-zarq-dark font-semibold uppercase tracking-wider py-4 px-8 rounded-sm transition-all duration-300"
               >
                 Consultar Condições

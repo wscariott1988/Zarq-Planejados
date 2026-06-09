@@ -1,5 +1,6 @@
 import { ArrowRight } from 'lucide-react';
 import { openQuizModal } from './QuizModal';
+import { trackWhatsAppConversion } from '../utils/conversion';
 
 const isPortoAlegre = () => {
   const path = window.location.pathname;
@@ -59,6 +60,7 @@ export default function Hero() {
             href={whatsappUrl}
             target="_blank"
             rel="noopener noreferrer"
+            onClick={trackWhatsAppConversion}
             className="group flex items-center justify-center gap-3 w-full md:w-fit bg-gold-500 hover:bg-gold-600 text-zarq-dark font-semibold uppercase tracking-wider py-4 px-8 rounded-sm transition-all duration-300 mx-auto md:mx-0"
           >
             Falar com um Especialista

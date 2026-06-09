@@ -1,5 +1,6 @@
 import { ArrowRight, Phone } from 'lucide-react';
 import { openQuizModal } from './QuizModal';
+import { trackWhatsAppConversion } from '../utils/conversion';
 
 const isPortoAlegre = () => {
   const path = window.location.pathname;
@@ -35,6 +36,7 @@ export default function Footer() {
               href={whatsappUrl}
               target="_blank"
               rel="noopener noreferrer"
+              onClick={trackWhatsAppConversion}
               className="group flex items-center justify-center gap-3 w-full bg-gold-500 hover:bg-gold-600 text-zarq-dark font-bold uppercase tracking-wider py-5 px-8 rounded-sm transition-all duration-300"
             >
               Solicitar Meu Orçamento Exclusivo
@@ -61,7 +63,7 @@ export default function Footer() {
             href={isPortoAlegre() ? whatsappUrl : WHATSAPP_LINK}
             target={isPortoAlegre() ? "_blank" : undefined}
             rel={isPortoAlegre() ? "noopener noreferrer" : undefined}
-            onClick={isPortoAlegre() ? undefined : openQuizModal}
+            onClick={isPortoAlegre() ? trackWhatsAppConversion : openQuizModal}
             className="flex items-center gap-3 text-white hover:text-gold-500 transition-colors"
           >
             <Phone className="w-5 h-5 text-gold-500" />

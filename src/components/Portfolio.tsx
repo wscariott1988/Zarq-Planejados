@@ -1,6 +1,7 @@
 import { Play, X } from 'lucide-react';
 import { useState } from 'react';
 import { openQuizModal } from './QuizModal';
+import { trackWhatsAppConversion } from '../utils/conversion';
 
 const isPortoAlegre = () => {
   const path = window.location.pathname;
@@ -111,6 +112,7 @@ export default function Portfolio() {
                 href={whatsappUrl}
                 target="_blank"
                 rel="noopener noreferrer"
+                onClick={trackWhatsAppConversion}
                 className="inline-flex items-center justify-center gap-3 w-full sm:w-auto bg-transparent border-2 border-gold-500 hover:bg-gold-500 hover:text-zarq-dark text-gold-500 font-bold uppercase tracking-wider py-4 px-8 rounded-sm transition-all duration-300"
               >
                 Quero um Projeto Com Esse Padrão

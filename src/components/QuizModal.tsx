@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { X } from 'lucide-react';
+import { trackWhatsAppConversion } from '../utils/conversion';
 
 export function openQuizModal(e?: React.MouseEvent) {
   if (e) e.preventDefault();
@@ -46,6 +47,7 @@ export default function QuizModal() {
     const encodedMessage = encodeURIComponent(message);
     const whatsappUrl = `https://wa.me/5551996707757?text=${encodedMessage}`;
     
+    trackWhatsAppConversion();
     window.open(whatsappUrl, '_blank');
     handleClose();
   };
