@@ -1,9 +1,17 @@
 import { ArrowRight, Phone } from 'lucide-react';
 import { openQuizModal } from './QuizModal';
 
+const isPortoAlegre = () => {
+  const path = window.location.pathname;
+  return path === '/porto-alegre' || path === '/porto-alegre/' || path === '/portoalegre' || path === '/portoalegre/';
+};
+
 const WHATSAPP_LINK = "#";
 
 export default function Footer() {
+  const whatsappMessage = encodeURIComponent("Olá, te encontrei no Google e gostaria de um orçamento");
+  const whatsappUrl = `https://wa.me/5551996707757?text=${whatsappMessage}`;
+
   return (
     <footer className="bg-zarq-dark py-16 md:py-24 border-t border-zarq relative z-20">
       <div className="container mx-auto px-6 max-w-7xl flex flex-col items-center text-center">
@@ -22,14 +30,26 @@ export default function Footer() {
 
         {/* Final CTA */}
         <div className="mb-16 w-full max-w-md">
-          <a 
-            href="#"
-            onClick={openQuizModal}
-            className="group flex items-center justify-center gap-3 w-full bg-gold-500 hover:bg-gold-600 text-zarq-dark font-bold uppercase tracking-wider py-5 px-8 rounded-sm transition-all duration-300"
-          >
-            Solicitar Meu Orçamento Exclusivo
-            <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-          </a>
+          {isPortoAlegre() ? (
+            <a 
+              href={whatsappUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group flex items-center justify-center gap-3 w-full bg-gold-500 hover:bg-gold-600 text-zarq-dark font-bold uppercase tracking-wider py-5 px-8 rounded-sm transition-all duration-300"
+            >
+              Solicitar Meu Orçamento Exclusivo
+              <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+            </a>
+          ) : (
+            <a 
+              href="#"
+              onClick={openQuizModal}
+              className="group flex items-center justify-center gap-3 w-full bg-gold-500 hover:bg-gold-600 text-zarq-dark font-bold uppercase tracking-wider py-5 px-8 rounded-sm transition-all duration-300"
+            >
+              Solicitar Meu Orçamento Exclusivo
+              <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+            </a>
+          )}
         </div>
 
         {/* Contact Info (Isolamento de Funil: apenas um contato centralizado e claro) */}
@@ -38,8 +58,10 @@ export default function Footer() {
             Atendimento Exclusivo
           </p>
           <a 
-            href={WHATSAPP_LINK}
-            onClick={openQuizModal}
+            href={isPortoAlegre() ? whatsappUrl : WHATSAPP_LINK}
+            target={isPortoAlegre() ? "_blank" : undefined}
+            rel={isPortoAlegre() ? "noopener noreferrer" : undefined}
+            onClick={isPortoAlegre() ? undefined : openQuizModal}
             className="flex items-center gap-3 text-white hover:text-gold-500 transition-colors"
           >
             <Phone className="w-5 h-5 text-gold-500" />

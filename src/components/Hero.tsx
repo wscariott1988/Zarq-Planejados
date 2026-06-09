@@ -1,19 +1,27 @@
 import { ArrowRight } from 'lucide-react';
 import { openQuizModal } from './QuizModal';
 
+const isPortoAlegre = () => {
+  const path = window.location.pathname;
+  return path === '/porto-alegre' || path === '/porto-alegre/' || path === '/portoalegre' || path === '/portoalegre/';
+};
+
 export default function Hero() {
   const path = window.location.pathname;
   let city = "";
   if (path === '/viamao' || path === '/viamao/') city = " em Viamão";
   if (path === '/canoas' || path === '/canoas/') city = " em Canoas";
-  if (path === '/porto-alegre' || path === '/porto-alegre/' || path === '/portoalegre' || path === '/portoalegre/') city = " em Porto Alegre";
+  if (isPortoAlegre()) city = " em Porto Alegre";
 
   let headlinePrefix = `Móveis Planejados de Alto Padrão${city}.`;
-  if (path === '/porto-alegre' || path === '/porto-alegre/' || path === '/portoalegre' || path === '/portoalegre/') {
+  if (isPortoAlegre()) {
     headlinePrefix = "Projetos Sob Medida e Móveis Planejados de Alto Padrão em Porto Alegre.";
   }
 
   const subheadline = `Esqueça os atrasos e a dor de cabeça. Transforme sua casa${city} com projetos exclusivos e viva a experiência de uma montagem limpa e pontual. Há 6 anos, a Zarq Planejados entrega o verdadeiro luxo: o capricho em cada detalhe.`;
+
+  const whatsappMessage = encodeURIComponent("Olá, te encontrei no Google e gostaria de um orçamento");
+  const whatsappUrl = `https://wa.me/5551996707757?text=${whatsappMessage}`;
 
   return (
     <section className="relative h-screen min-h-[600px] flex items-center justify-center bg-zarq overflow-hidden">
@@ -46,14 +54,26 @@ export default function Hero() {
           {subheadline}
         </p>
 
-        <a 
-          href="#"
-          onClick={openQuizModal}
-          className="group flex items-center justify-center gap-3 w-full md:w-fit bg-gold-500 hover:bg-gold-600 text-zarq-dark font-semibold uppercase tracking-wider py-4 px-8 rounded-sm transition-all duration-300 mx-auto md:mx-0"
-        >
-          Falar com um Especialista
-          <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-        </a>
+        {isPortoAlegre() ? (
+          <a 
+            href={whatsappUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="group flex items-center justify-center gap-3 w-full md:w-fit bg-gold-500 hover:bg-gold-600 text-zarq-dark font-semibold uppercase tracking-wider py-4 px-8 rounded-sm transition-all duration-300 mx-auto md:mx-0"
+          >
+            Falar com um Especialista
+            <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+          </a>
+        ) : (
+          <a 
+            href="#"
+            onClick={openQuizModal}
+            className="group flex items-center justify-center gap-3 w-full md:w-fit bg-gold-500 hover:bg-gold-600 text-zarq-dark font-semibold uppercase tracking-wider py-4 px-8 rounded-sm transition-all duration-300 mx-auto md:mx-0"
+          >
+            Falar com um Especialista
+            <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+          </a>
+        )}
       </div>
     </section>
   );
