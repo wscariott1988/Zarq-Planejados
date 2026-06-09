@@ -1,3 +1,5 @@
+declare function gtag(...args: unknown[]): void;
+
 export function trackWhatsAppConversion() {
   if (typeof gtag !== 'undefined') {
     gtag('event', 'conversion', {
