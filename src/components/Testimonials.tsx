@@ -1,4 +1,4 @@
-import { useState, useEffect, useCallback } from 'react';
+import { useState, useEffect, useCallback, useRef } from 'react';
 import { ChevronLeft, ChevronRight, Star } from 'lucide-react';
 
 const testimonials = [
@@ -32,7 +32,8 @@ const testimonials = [
   }
 ];
 
-const desktopTestimonials = testimonials.filter((_, i) => i !== 2);
+const DESKTOP_PER_PAGE = 3;
+const desktopPages = Math.ceil(testimonials.length / DESKTOP_PER_PAGE);
 
 function Stars() {
   return (
@@ -59,20 +60,47 @@ function TestimonialCard({ name, text }: { name: string; text: string }) {
 }
 
 export default function Testimonials() {
-  const [currentIndex, setCurrentIndex] = useState(0);
+  const [mobileIndex, setMobileIndex] = useState(0);
+  const [desktopIndex, setDesktopIndex] = useState(0);
+  const desktopRef = useRef<HTMLDivElement>(null);
 
-  const next = useCallback(() => {
-    setCurrentIndex(prev => (prev + 1) % testimonials.length);
+  const mobileNext = useCallback(() => {
+    setMobileIndex(prev => (prev + 1) % testimonials.length);
   }, []);
 
-  const prev = useCallback(() => {
-    setCurrentIndex(prev => (prev - 1 + testimonials.length) % testimonials.length);
+  const mobilePrev = useCallback(() => {
+    setMobileIndex(prev => (prev - 1 + testimonials.length) % testimonials.length);
   }, []);
 
   useEffect(() => {
-    const interval = setInterval(next, 7000);
+    const interval = setInterval(mobileNext, 7000);
     return () => clearInterval(interval);
-  }, [next]);
+  }, [mobileNext]);
+
+  const scrollDesktop = (direction: 'prev' | 'next') => {
+    if (!desktopRef.current) return;
+    const container = desktopRef.current;
+    const cardWidth = container.scrollWidth / testimonials.length;
+    const scrollAmount = cardWidth * DESKTOP_PER_PAGE;
+    const target = direction === 'next'
+      ? container.scrollLeft + scrollAmount
+      : container.scrollLeft - scrollAmount;
+
+    container.scrollTo({ left: target, behavior: 'smooth' });
+
+    const newIndex = direction === 'next'
+      ? Math.min(desktopIndex + 1, desktopPages - 1)
+      : Math.max(desktopIndex - 1, 0);
+    setDesktopIndex(newIndex);
+  };
+
+  const scrollToDesktopPage = (page: number) => {
+    if (!desktopRef.current) return;
+    const container = desktopRef.current;
+    const cardWidth = container.scrollWidth / testimonials.length;
+    container.scrollTo({ left: cardWidth * DESKTOP_PER_PAGE * page, behavior: 'smooth' });
+    setDesktopIndex(page);
+  };
 
   return (
     <section className="bg-zarq-dark py-24 md:py-32">
@@ -87,12 +115,12 @@ export default function Testimonials() {
           <div className="w-24 h-1 bg-gold-500 mx-auto opacity-70"></div>
         </div>
 
-        {/* Mobile Carousel */}
+        {/* Mobile Carousel (1 card per view) */}
         <div className="md:hidden relative">
           <div className="overflow-hidden">
             <div
               className="flex transition-transform duration-500 ease-in-out"
-              style={{ transform: `translateX(-${currentIndex * 100}%)` }}
+              style={{ transform: `translateX(-${mobileIndex * 100}%)` }}
             >
               {testimonials.map((item, index) => (
                 <div key={index} className="w-full flex-shrink-0 px-4">
@@ -103,7 +131,7 @@ export default function Testimonials() {
           </div>
 
           <button
-            onClick={prev}
+            onClick={mobilePrev}
             className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-2 w-10 h-10 rounded-full bg-zarq-dark/80 border border-zarq/50 flex items-center justify-center text-gold-500 hover:bg-zarq-dark transition-colors z-10"
             aria-label="Depoimento anterior"
           >
@@ -111,7 +139,7 @@ export default function Testimonials() {
           </button>
 
           <button
-            onClick={next}
+            onClick={mobileNext}
             className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-2 w-10 h-10 rounded-full bg-zarq-dark/80 border border-zarq/50 flex items-center justify-center text-gold-500 hover:bg-zarq-dark transition-colors z-10"
             aria-label="Próximo depoimento"
           >
@@ -122,9 +150,9 @@ export default function Testimonials() {
             {testimonials.map((_, index) => (
               <button
                 key={index}
-                onClick={() => setCurrentIndex(index)}
+                onClick={() => setMobileIndex(index)}
                 className={`w-2.5 h-2.5 rounded-full transition-all duration-300 ${
-                  index === currentIndex
+                  index === mobileIndex
                     ? 'bg-gold-500 w-6'
                     : 'bg-zarq-dark/60 hover:bg-zarq-dark'
                 }`}
@@ -134,11 +162,55 @@ export default function Testimonials() {
           </div>
         </div>
 
-        {/* Desktop Grid (6 testimoniais, excluindo Josiane) */}
-        <div className="hidden md:grid md:grid-cols-3 gap-6">
-          {desktopTestimonials.map((item, index) => (
-            <TestimonialCard key={index} name={item.name} text={item.text} />
-          ))}
+        {/* Desktop Carousel (3 cards per view) */}
+        <div className="hidden md:block relative">
+          <div
+            ref={desktopRef}
+            className="flex gap-6 overflow-x-auto scroll-smooth snap-x snap-mandatory no-scrollbar"
+            style={{ scrollbarWidth: 'none' }}
+          >
+            {testimonials.map((item, index) => (
+              <div
+                key={index}
+                className="min-w-[calc((100%-12px)/3)] snap-start flex-shrink-0"
+              >
+                <TestimonialCard name={item.name} text={item.text} />
+              </div>
+            ))}
+          </div>
+
+          <button
+            onClick={() => scrollDesktop('prev')}
+            disabled={desktopIndex === 0}
+            className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-5 w-11 h-11 rounded-full bg-zarq-dark/90 border border-zarq/50 flex items-center justify-center text-gold-500 hover:bg-zarq-dark transition-colors z-10 disabled:opacity-30 disabled:cursor-not-allowed"
+            aria-label="Depoimentos anteriores"
+          >
+            <ChevronLeft className="w-5 h-5" />
+          </button>
+
+          <button
+            onClick={() => scrollDesktop('next')}
+            disabled={desktopIndex === desktopPages - 1}
+            className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-5 w-11 h-11 rounded-full bg-zarq-dark/90 border border-zarq/50 flex items-center justify-center text-gold-500 hover:bg-zarq-dark transition-colors z-10 disabled:opacity-30 disabled:cursor-not-allowed"
+            aria-label="Próximos depoimentos"
+          >
+            <ChevronRight className="w-5 h-5" />
+          </button>
+
+          <div className="flex justify-center gap-2 mt-8">
+            {Array.from({ length: desktopPages }).map((_, index) => (
+              <button
+                key={index}
+                onClick={() => scrollToDesktopPage(index)}
+                className={`w-2.5 h-2.5 rounded-full transition-all duration-300 ${
+                  index === desktopIndex
+                    ? 'bg-gold-500 w-6'
+                    : 'bg-zarq-dark/60 hover:bg-zarq-dark'
+                }`}
+                aria-label={`Página ${index + 1}`}
+              />
+            ))}
+          </div>
         </div>
       </div>
     </section>
