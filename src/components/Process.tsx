@@ -46,9 +46,6 @@ export default function Process() {
           {steps.map((step, index) => (
             <div key={index} className="relative flex flex-col items-center text-center group">
               <div className="w-24 h-24 rounded-full bg-zarq-dark border border-zarq/50 flex items-center justify-center mb-8 relative z-10 group-hover:border-gold-500/50 transition-colors duration-500 shadow-xl">
-                <span className="absolute -top-3 -right-2 text-5xl font-playfair font-bold text-zarq/60 z-0">
-                  {index + 1}
-                </span>
                 <step.icon className="w-10 h-10 text-gold-500 relative z-10" strokeWidth={1.5} />
               </div>
               
